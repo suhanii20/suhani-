@@ -1,0 +1,35 @@
+# Copy this file to config.toml and fill it in.
+
+[notify]
+# Pick a long, hard-to-guess topic name: anyone who knows it can read/send to it.
+# Then in the ntfy phone app tap "+" and subscribe to the same name.
+ntfy_topic = "CHANGE-ME"
+ntfy_server = "https://ntfy.sh"
+# Also ping you when an open class fills up again
+notify_on_close = false
+
+[workday]
+# Your RISD Workday home page (copy it from your browser's address bar after
+# logging in). Used only by `python watcher.py login`.
+home_url = "https://wd5.myworkday.com/risd/d/home.htmld"
+check_every_minutes = 10
+# Set to false to watch the browser do its checks (handy for debugging)
+headless = true
+# Max seconds to wait for a Workday page to finish loading
+page_wait_seconds = 20
+
+# One [[course]] block per section you want to watch.
+# url = the address of the course SECTION page in Workday (open the section,
+# then copy the URL from the address bar).
+[[course]]
+name = "Example: ILLUS 2000 Section 01"
+url = "https://wd5.myworkday.com/risd/d/inst/PASTE-SECTION-URL-HERE.htmld"
+
+# [[course]]
+# name = "Another class"
+# url = "https://wd5.myworkday.com/risd/d/inst/....htmld"
+# Optional: custom regexes if the built-in ones can't read the page
+# (see `python watcher.py dump URL`). Group 1 = number of open seats:
+# seats_pattern = "Available Seats\\s*(\\d+)"
+# Groups 1 and 2 = enrolled and capacity:
+# enrolled_capacity_pattern = "Enrolled/Capacity\\s*(\\d+)\\s*/\\s*(\\d+)"

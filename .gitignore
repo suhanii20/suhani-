@@ -1,0 +1,6 @@
+config.toml
+state.json
+browser-profile/
+debug/
+__pycache__/
+.venv/
